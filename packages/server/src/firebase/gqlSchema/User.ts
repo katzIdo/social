@@ -4,27 +4,40 @@ import { makeExecutableSchema, addMockFunctionsToSchema} from 'graphql-tools';
 export const userSchema = makeExecutableSchema({
   typeDefs: gql`
   input SearchNamesRequest {
-    name: String!
+    id: String
+    name: String
+    surname: String
   }
   
-  
-  input SetNameRequest {
+  input UserRequest {
+    id: String
     name: String!
     surname: String!
   }
 
+  type UserResponse {
+    data: User
+    error: String
+  }
+  
+  type UsersResponse {
+    data: [User]
+    error: String
+  }
+  
   type User {
+    id: String!
     name: String!
     surname: String!
   }
 
   type Query {
-    hello: String
-    searchNames(searchRequest :SearchNamesRequest!): [User]
+    login(searchRequest :SearchNamesRequest!): UserResponse
+    searchUsers(searchRequest :SearchNamesRequest!): UsersResponse
   }
   
   type Mutation{
-    setName(nameRequest :SetNameRequest!): User
+    register(nameRequest :UserRequest!): UserResponse
   }
 `
 });
