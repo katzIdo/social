@@ -11,9 +11,7 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "scripts": {
-    "start": "http-server -a localhost -p 2001"
-  },
+  "scripts": {},
   "workspaces": {
     "packages": [
       "packages/*"

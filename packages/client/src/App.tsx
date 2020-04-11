@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 
@@ -8,15 +8,12 @@ const client = new ApolloClient({
   uri: localGraphQL
 });
 
-class App extends Component {
-  render() {
-    return (
-      <ApolloProvider client={client}>
-        <div>
-          <h2>My first Apollo app </h2>
-        </div>
-      </ApolloProvider>
-    );
-  }
-}
+const App = () => (
+  <ApolloProvider client={client}>
+    <div>
+      <h2>My first Apollo app </h2>
+    </div>
+  </ApolloProvider>
+);
+
 export default App;
