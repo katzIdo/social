@@ -2,7 +2,7 @@
   "name": "social",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "author": "",
   "license": "ISC",
   "private": true,
@@ -21,7 +21,6 @@
     "nohoist": []
   },
   "devDependencies": {
-    "http-server": "^0.12.1",
     "husky": "^2.3.0",
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0"
