@@ -18,3 +18,5 @@ export const STORAGE_BUCKET = checkEnvVariable(process.env.STORAGE_BUCKET, 'stor
 export const MESSAGING_SENDER_ID = checkEnvVariable(process.env.MESSAGING_SENDER_ID, 'msg sender id not provided');
 export const APP_ID = checkEnvVariable(process.env.APP_ID, 'app id not provided');
 export const MEASUREMENT_ID = checkEnvVariable(process.env.MEASUREMENT_ID, 'analytic id not provided');
+
+export const JWT_SECRET = checkEnvVariable(process.env.JWT_SECRET, 'jwt key not provided');

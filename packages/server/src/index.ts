@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { gqlServer } from './firebase/index';
+import { gqlServer } from './graphql';
 
 
 const server = gqlServer(express);

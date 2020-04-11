@@ -13,10 +13,12 @@ export const userSchema = makeExecutableSchema({
     id: String
     name: String!
     surname: String!
+    password: String!
   }
 
   type UserResponse {
     data: User
+    token: String
     error: String
   }
   
@@ -32,12 +34,12 @@ export const userSchema = makeExecutableSchema({
   }
 
   type Query {
-    login(searchRequest :SearchNamesRequest!): UserResponse
+    login(userRequest :UserRequest!): UserResponse
     searchUsers(searchRequest :SearchNamesRequest!): UsersResponse
   }
   
   type Mutation{
-    register(nameRequest :UserRequest!): UserResponse
+    register(userRequest :UserRequest!): UserResponse
   }
 `
 });
