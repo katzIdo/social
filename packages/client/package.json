@@ -4,19 +4,24 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=4001 react-scripts start",
     "build": "react-scripts build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.9.10",
+    "@material-ui/icons": "^4.9.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
+    "@types/react-router-dom": "^5.1.4",
     "apollo-boost": "^0.4.7",
     "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
     "react": "^16.13.1",
     "react-apollo": "^3.1.4",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "typescript": "^3.8.3"
   },
