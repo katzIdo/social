@@ -5,9 +5,33 @@ import { BrowserRouter, Route } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { appStyle } from "./styles/app";
 import AppMenu from "./components/AppMenu/AppMenu";
 import User from "./components/User/User";
+import Login from "./components/forms/Login/Login";
+import { makeStyles } from "@material-ui/core/styles";
+import "./style.css";
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    height: "100%"
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1,
+    height: "10%"
+  },
+  container: {
+    flex: "1 1 auto",
+    height: "80%"
+  },
+  footer: {
+    height: "10%",
+    padding: theme.spacing(2)
+  }
+}));
 
 const localGraphQL = "http://localhost:4000/graphql";
 
@@ -16,14 +40,13 @@ const client = new ApolloClient({
 });
 
 const HomePage = () => <div>This is a Home Page</div>;
-const LoginPage = () => <div>This is a Login Page</div>;
 const RegisterPage = () => <div>This is a Register Page</div>;
 const MyAccountPage = () => <div>This is the Profile Page</div>;
 const AboutPage = () => <div>This is an About Page</div>;
 const ContactPage = () => <div>This is a Contact Page</div>;
 
 const App = () => {
-  const classes = appStyle();
+  const classes = useStyles();
 
   return (
     <BrowserRouter>
@@ -38,15 +61,15 @@ const App = () => {
               <User />
             </Toolbar>
           </AppBar>
-          <div className="container">
+          <div className={classes.container}>
             <Route path="/" exact component={HomePage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/contact" component={ContactPage} />
-            <Route path="/login" component={LoginPage} />
+            <Route path="/login" component={Login} />
             <Route path="/register" component={RegisterPage} />
             <Route path="/myAccount" component={MyAccountPage} />
           </div>
-          <footer>TO DO FOOTER</footer>
+          <footer className={classes.footer}>TO DO FOOTER</footer>
         </div>
       </ApolloProvider>
     </BrowserRouter>
